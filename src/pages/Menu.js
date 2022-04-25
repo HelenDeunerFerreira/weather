@@ -7,7 +7,10 @@ export default function Menu({ navigation }) {
             <Text style={styles.titulo}>Opções do Menu:</Text>
 
             <View style={styles.viewbuttons}>
-                <Button title='Previsão' onPress={() => navigation.navigate('Previsao')} />
+                <Button
+                    title="Carazinho"
+                    onPress={() => navigation.navigate('Carazinho', { cidade: "4304705" })}
+                />
                 <Button title='Sobre a dev' onPress={() => navigation.navigate('Sobre')} />
             </View>
 

@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Menu from './src/pages/Menu';
-import Previsao from './src/pages/Previsao';
+import Carazinho from './src/pages/Carazinho';
 import Sobre from './src/pages/Sobre';
 
 const Stack = createNativeStackNavigator();
@@ -36,10 +36,10 @@ export default function App() {
         />
 
         <Stack.Screen
-          name="Previsao"
-          component={Previsao}
+          name="Carazinho"
+          component={Carazinho}
           options={
-            { title: "Previsão das cidades" }
+            { title: "Previsão de Carazinho" }
           }
         />
 
