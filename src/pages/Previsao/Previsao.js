@@ -3,8 +3,8 @@ import React, { useState, useLayoutEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, FlatList, Button } from 'react-native';
 
-import { getCitys } from '../services/PrevisaoTempo';
-import Registro from '../components/Registro';
+import { getCitys } from '../../services/PrevisaoTempo';
+import Registro from '../../components/Registro/Registro';
 
 
 export default function Previsao(props) {
@@ -13,9 +13,12 @@ export default function Previsao(props) {
 
     useLayoutEffect(() => {
         let cidade = props.route.params.cidade
-        getCitys()
+        let dia = "25/04/2022"
+        let turno = ["manha", "tarde", "noite"]
+
+        getCitys(cidade)
             .then(dados => {
-                setCidade(dados[cidade]["25/04/2022"]["manha"])
+                setCidade(dados[cidade][dia][turno[0]])
             })
 
             .catch(erro => console.log(erro))

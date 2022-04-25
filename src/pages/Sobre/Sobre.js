@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 export default function Sobre({ navigation }) {
     return (
         <View style={styles.container}>
-            <Image style={styles.imagem} source={require('../../assets/foto-helen.jpg')} />
+            <Image style={styles.imagem} source={require('../../../assets/foto-helen.jpg')} />
             <Text style={styles.texto}>Olá, me chamo Helen e estou cursando Ciência da Computação na IMED. Meu aniversário é 5 de fevereiro e tenho 19 anos. Moro em Passo Fundo/RS com a minha família.</Text>
             <Text style={styles.perfil}>Perfil no LinkedIn: Helen Deuner Ferreira</Text>
             <Text style={styles.perfil}>Perfil no GitHub: HelenDeunerferreira</Text>
