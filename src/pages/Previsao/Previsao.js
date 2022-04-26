@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect } from 'react';
-
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, FlatList, Button } from 'react-native';
+
+import { Container } from './style'
 
 import { getCitys } from '../../services/PrevisaoTempo';
 import Registro from '../../components/Registro/Registro';
@@ -25,24 +25,13 @@ export default function Previsao(props) {
     }, [])
 
 
-
     return (
-        <View style={styles.container}>
-
+        <Container>
             <Registro
                 dados={cidade}
             />
 
             <StatusBar style="auto" />
-        </View>
+        </Container>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});

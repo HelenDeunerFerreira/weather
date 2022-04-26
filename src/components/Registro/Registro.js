@@ -1,5 +1,5 @@
 import React, { useState, useLayoutEffect } from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { Container, Imagem, Row, Subtitle, Conteudo } from './style'
 
 export default function Registro(props) {
     const [cidade, setCidade] = useState("Não Informado");
@@ -17,47 +17,32 @@ export default function Registro(props) {
     }, [props]);
 
     return (
-        <View>
-            <View>
-                <Text>Cidade:</Text>
-                <Text>{cidade}</Text>
-            </View>
-
-            <Image
-                style={styles.imagem}
+        <Container>
+            <Imagem
                 source={{
                     uri: icone,
                 }}
             />
 
-            <View>
-                <Text>Temperatura máxima:</Text>
-                <Text>{tempmax}</Text>
-            </View>
+            <Row>
+                <Subtitle>Cidade: </Subtitle>
+                <Conteudo>{cidade}</Conteudo>
+            </Row>
 
-            <View>
-                <Text>Temperatura mínima:</Text>
-                <Text>{tempmin}</Text>
-            </View>
+            <Row>
+                <Subtitle>Temperatura máxima: </Subtitle>
+                <Conteudo>{tempmax}°C</Conteudo>
+            </Row>
 
-            <View>
-                <Text>Resumo do dia:</Text>
-                <Text>{resumo}</Text>
-            </View>
-        </View>
+            <Row>
+                <Subtitle>Temperatura mínima: </Subtitle>
+                <Conteudo>{tempmin}°C</Conteudo>
+            </Row>
+
+            <Row>
+                <Subtitle>Resumo do dia: </Subtitle>
+                <Conteudo>{resumo}</Conteudo>
+            </Row>
+        </Container>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        padding: 10,
-        borderWidth: 1,
-        borderRadius: 10,
-        borderColor: "gray",
-        margin: 5,
-    },
-    imagem: {
-        width: 50,
-        height: 50,
-    },
-});

@@ -1,60 +1,46 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { Container, Title, ButtonCidade, TextoButton, ButtonSobre } from './style'
 
 export default function Menu({ navigation }) {
     return (
-        <View style={styles.container}>
-            <Text style={styles.titulo}>Opções do Menu:</Text>
+        <Container>
+            <Title>MENU</Title>
 
-            <View>
+            <ButtonCidade
+                onPress={() => navigation.navigate('Previsao', { cidade: "4304705" })}
+            >
+                <TextoButton>Carazinho</TextoButton>
+            </ButtonCidade>
 
-                <Button
-                    title="Carazinho"
-                    onPress={() => navigation.navigate('Previsao', { cidade: "4304705" })}
-                />
+            <ButtonCidade
+                onPress={() => navigation.navigate('Previsao', { cidade: "4307005" })}
+            >
+                <TextoButton>Erechim</TextoButton>
+            </ButtonCidade>
 
-                <Button
-                    title="Erechim"
-                    onPress={() => navigation.navigate('Previsao', { cidade: "4307005" })}
-                />
+            <ButtonCidade
+                onPress={() => navigation.navigate('Previsao', { cidade: "4311809" })}
+            >
+                <TextoButton>Marau</TextoButton>
+            </ButtonCidade>
 
-                <Button
-                    title="Marau"
-                    onPress={() => navigation.navigate('Previsao', { cidade: "4311809" })}
-                />
+            <ButtonCidade
+                onPress={() => navigation.navigate('Previsao', { cidade: "4314100" })}
+            >
+                <TextoButton>Passo Fundo</TextoButton>
+            </ButtonCidade>
 
-                <Button
-                    title="Passo Fundo"
-                    onPress={() => navigation.navigate('Previsao', { cidade: "4314100" })}
-                />
+            <ButtonCidade
+                onPress={() => navigation.navigate('Previsao', { cidade: "4320800" })}
+            >
+                <TextoButton>Soledade</TextoButton>
+            </ButtonCidade>
 
-                <Button
-                    title="Soledade"
-                    onPress={() => navigation.navigate('Previsao', { cidade: "4320800" })}
-                />
-
-                {/* <Button title='Sobre a dev' onPress={() => navigation.navigate('Sobre')} /> */}
-            </View>
+            <ButtonSobre onPress={() => navigation.navigate('Sobre')} >
+                <TextoButton>Sobre</TextoButton>
+            </ButtonSobre>
 
             <StatusBar style="auto" />
-        </View>
+        </Container>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        justifyContent: 'center',
-    },
-    viewbuttons: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        margin: 30
-    },
-    titulo: {
-        fontSize: 25,
-        fontStyle: 'italic',
-        textAlign: 'center'
-    }
-});

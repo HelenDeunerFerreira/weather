@@ -14,41 +14,23 @@ export default function App() {
 
       <Stack.Navigator initialRouteName='Menu'
         screenOptions={{
-          headerTitleAlign: "center",
-          headerStyle: {
-            backgroundColor: '#1c3c94',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
+          headerTitle: "",
         }}
       >
 
         <Stack.Screen
           name="Menu"
           component={Menu}
-          options={
-            {
-              title: 'Menu',
-            }
-          }
         />
 
         <Stack.Screen
           name="Previsao"
           component={Previsao}
-          options={
-            { title: "Previsão do tempo" }
-          }
         />
 
         <Stack.Screen
           name="Sobre"
           component={Sobre}
-          options={
-            { title: "Sobre a desenvolvedora" }
-          }
         />
 
       </Stack.Navigator>
